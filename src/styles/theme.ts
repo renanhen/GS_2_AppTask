@@ -1,11 +1,11 @@
-// src/styles/theme.ts (Exemplo)
+
 
 const theme = {
     colors: {
-        primary: '#007bff',       // Azul
-        primaryDark: '#0056b3',   // Azul mais escuro (para hover)
-        secondary: '#6c757d',     // Cinza
-        secondaryDark: '#5a6268', // Cinza mais escuro (para hover)
+        primary: '#007bff',       
+        primaryDark: '#0056b3',   
+        secondary: '#6c757d',     
+        secondaryDark: '#5a6268', 
         background: '#f8f9fa',
         text: '#212529',
         error: '#dc3545',

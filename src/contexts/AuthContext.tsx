@@ -5,7 +5,7 @@ interface User {
   id: string;
   name: string;
   email: string;
-  password: string; // necessário pois não tem backend
+  password: string; 
 }
 
 interface AuthContextProps {
@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Carrega usuário logado
+
   useEffect(() => {
     async function loadUser() {
       const savedUser = await AsyncStorage.getItem("@loggedUser");
@@ -34,12 +34,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     loadUser();
   }, []);
 
-  // Registrar (salva no AsyncStorage)
+
   async function register({ name, email, password }: User) {
     const savedUsers = await AsyncStorage.getItem("@users");
     const users: User[] = savedUsers ? JSON.parse(savedUsers) : [];
 
-    // Verifica se já existe
+
     if (users.some((u) => u.email === email)) {
       throw new Error("Email já cadastrado!");
     }
